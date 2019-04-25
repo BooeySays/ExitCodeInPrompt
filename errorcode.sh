@@ -12,7 +12,7 @@
 #    fi
 #    unset ecode tcode
 #} 
-ps1=$PS1
+PS1_noEXITCODE=$PS1
 function nonzero_return() {
     RETVAL=$?
     if [ $RETVAL -ne 0 ]; then
@@ -23,4 +23,4 @@ function nonzero_return() {
 #    [ $RETVAL -ne 0 ] && echo "$RETVAL"
 }
 
-export PS1="\n\`nonzero_return\`$ps1"
+export PS1="\n\`nonzero_return\`$PS1_noEXITCODE"
